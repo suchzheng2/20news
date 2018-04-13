@@ -20,6 +20,7 @@ import sys
 import codecs
 import matplotlib.pyplot as plt
 
+global MAX_SEQUENCE_LENGTH, MAX_NB_WORDS , EMBEDDING_DIM, VALIDATION_SPLIT, DROP_OUT, Nb_EPOCH, BATCH_SIZE, Classes 
 MAX_SEQUENCE_LENGTH = 1000
 MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 200
@@ -40,7 +41,7 @@ parameters = {
 
 
 def reset_parameter():
-    global MAX_SEQUENCE_LENGTH, MAX_NB_WORDS , EMBEDDING_DIM, VALIDATION_SPLIT, DROP_OUT, Nb_EPOCH, BATCH_SIZE, Classes 
+    
 
     MAX_SEQUENCE_LENGTH = 1000
     MAX_NB_WORDS = 20000
@@ -161,6 +162,8 @@ def train_and_evaluate_model(model, train_X, train_Y, test_X, test_Y):
 
     return (model_history, last_epoch_training_loss, last_epoch_training_accuracy, eval_loss, eval_accuracy, trainTime) 
 
+
+#print('Number of classes' +Classes)
 
 global Classes, DROP_OUT, EMBEDDING_DIM, Nb_EPOCH, FILENAME, TEXT_DATA_DIR
 for key in parameters:
